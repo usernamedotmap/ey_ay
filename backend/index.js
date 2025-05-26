@@ -42,12 +42,12 @@ app.get("/api/upload", (req, res) => {
 
 app.use("/api", chatRoutes);
 
-app.use(express.static(path.join(__dirname, "../client")));
+app.use(express.static(path.join(__dirname, "../client/dist")));
 
 app.get('/test', (req, res) => res.send('ok'));
 
 app.get("*", (req, res) => {
-  const indexPath = path.resolve(__dirname, "../client", "index.html");
+  const indexPath = path.resolve(__dirname, "../client", "dist", "index.html");
   res.sendFile(indexPath);
 });
 
