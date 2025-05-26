@@ -5,7 +5,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./routes//homepage/Home.jsx";
 import Dashboard from "./routes/dashboard/Dashboard.jsx";
 import Chat from "./routes/chatpage/Chat.jsx";
-import RootLayout from "./layout/rootLayout/rootLayout.jsx";
+import RootLayout from "./layout/rootLayout/RootLayout.jsx";
 import DashboardLayout from "./layout/dashboardLayout/DashboardLayout.jsx";
 import { Signin } from "./routes/signin/Signin.jsx";
 import Signup from "./routes/signup/Signup.jsx";
