@@ -1,0 +1,205 @@
+.homePage {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  gap: 100px;
+
+
+
+  @media screen and (max-width: 1024px) {
+    flex-direction: column;
+    gap: 0px;
+
+  }
+
+  .left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    h1 {
+      font-size: 70px;
+      background: linear-gradient(to right, #ee696b, #523a78);
+      background-clip: text;
+      --webkit-background-clip: text;
+      color: transparent;
+
+      @media screen and (max-width: 1280px) {
+        font-size: 64px;
+        
+      }
+    }
+
+    h3 {
+      font-weight: 400;
+      max-width: 70%;
+
+      @media screen and (max-width: 1024px) {
+        max-width: 100%;
+        
+      }
+    }
+
+    a {
+      padding: 15px 25px;
+      background-color: #217bfe;
+      border-radius: 20px;
+      color: white;
+      font-size: 15px;
+      margin-top: 20px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #fffafa;
+        color: #1e90ff;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+
+
+    .imgContainer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #140e2d;
+      border-radius: 50px;
+      width: 80%;
+      height: 50%;
+      position: relative;
+
+      .bgContainer {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 50px;
+
+        .bg {
+          background-image: url("/src//assets/bg_dot.png");
+          opacity: 0.4;
+          width: 200%;
+          height: 100%;
+          background-size: auto 100%;
+          animation: 8s ease-in-out infinite alternate slideBg;
+       
+        }
+      }
+
+      .imgAi {
+        width: 100%;
+        height: 100%;
+        border-radius: 20px;
+        object-fit: contain;
+        animation: 3s ease-in-out infinite alternate imgAi;
+        opacity: 0.6;
+      }
+
+      .chat {
+        overflow: hidden;
+        position: absolute;
+        bottom: 40px;
+        right: 0;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 15px;
+        background-color: #2c2937;
+        border-radius: 10px;
+
+
+        @media screen and (max-width: 1024px) {
+          display: none;
+        }
+
+        @media  screen and (max-width: 1280px) {
+          right: 0;
+          
+        }
+
+        img {
+          width: 34px;
+          height: 34px;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+
+  .orbital {
+    width: 50%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    opacity: 0.08;
+    animation: 100s ease infinite orbital;
+    z-index: -1;
+  }
+
+  .terms {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+
+    img {
+      width: 20px;
+      height: 20px;
+    }
+
+    .links {
+      display: flex;
+      gap: 10px;
+      color: #888;
+      font-size: 10px;
+    }
+  }
+}
+
+@keyframes orbital {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(50px);
+  }
+}
+
+@keyframes imgAi {
+  0% {
+    transform: scale(1) rotate(5deg);
+  }
+
+  100% {
+    transform: scale(1.1) rotate(-5deg);
+  }
+}
+
+@keyframes slideBg {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50px);
+  }
+}
